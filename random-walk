@@ -1,0 +1,31 @@
+from numpy.matrixlib.defmatrix import matrix
+import random
+import matplotlib.pyplot as plt
+import numpy as np
+matrix=[]
+for i in range(0,20):
+  mylist=[0]
+  location=0
+  for i in range (0,7):
+    m= random.randint(0,1)
+    if m==0:
+      location += -1
+    if m==1:
+      location += 1
+    mylist.append(location)
+    if location==3:
+      while len(mylist)<8:
+        mylist.append(3)
+    elif location==-3:
+      while len(mylist)<8:
+        mylist.append(-3)
+
+
+  mylist= mylist[0:8]
+  mylist
+  matrix.append(mylist)
+matrix
+ar= np.array(matrix)
+for line in ar:
+ plt.plot(line)
+plt.show()
